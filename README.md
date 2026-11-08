@@ -1,5 +1,6 @@
 # CS-781 Capstone: An In-House Legal Intelligence System
 
+**Name:** Kavin Chowdary Gonuguntla · **Roll no.:** 230551 · **Codabench:** k_230551
 A compact legal language model built **from scratch** on Indian court judgments, then reused for six downstream legal
 tasks. Everything here was trained on the official course data only (`Exploration-Lab/CS-781-Capstone`). There are no
 pretrained weights and no outside corpora; we used our own BPE tokenizer and ran every notebook on free Kaggle T4 GPUs.
