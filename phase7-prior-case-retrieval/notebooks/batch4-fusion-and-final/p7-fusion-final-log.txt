@@ -1,0 +1,166 @@
+11.9s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.9s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.9s 3 0.00s - to python to disable frozen modules.
+11.9s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+12.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+12.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+12.7s 7 0.00s - to python to disable frozen modules.
+12.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+18.1s 9 [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/857.0 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m317.4/857.0 kB[0m [31m9.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m849.9/857.0 kB[0m [31m16.6 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m857.0/857.0 kB[0m [31m10.8 MB/s[0m eta [36m0:00:00[0m
+21.7s 10 [?25h[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+21.7s 11 gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 2.4.0 which is incompatible.
+21.7s 12 datasets 4.8.5 requires huggingface-hub<2.0,>=0.25.0, but you have huggingface-hub 2.4.0 which is incompatible.
+21.7s 13 diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 2.4.0 which is incompatible.
+21.7s 14 transformers 5.16.1 requires huggingface-hub<2.0,>=1.5.0, but you have huggingface-hub 2.4.0 which is incompatible.
+21.7s 15 gradio-client 2.6.1 requires huggingface-hub<2.0,>=0.19.3, but you have huggingface-hub 2.4.0 which is incompatible.
+21.7s 16 tokenizers 0.23.1 requires huggingface-hub<2.0,>=0.16.4, but you have huggingface-hub 2.4.0 which is incompatible.[0m[31m
+36.8s 17 Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+36.8s 18 
+36.8s 19 Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+37.1s 20 [0mdevice: cuda Tesla T4
+117.6s 21 lexical scores ready [54s]
+195.5s 22 63 trained setups loaded
+195.5s 23 
+195.5s 24 A. Lexical rankers (no Phase-1 model)
+195.5s 25 TF-IDF uni+bigram                                          F1@7 0.3969 P@7 0.4322 R@7 0.3669 R@100 0.710 MRR 0.8681
+195.5s 26 BM25 (query tf)                                            F1@7 0.2335 P@7 0.2542 R@7 0.2158 R@100 0.564 MRR 0.5900
+195.5s 27 TF-IDF + 0.25 x BM25                                       F1@7 0.3747 P@7 0.4080 R@7 0.3464 R@100 0.693 MRR 0.8528
+195.5s 28 TF-IDF + 0.5 x BM25                                        F1@7 0.3602 P@7 0.3923 R@7 0.3330 R@100 0.672 MRR 0.8238
+195.5s 29 TF-IDF + 1.0 x BM25                                        F1@7 0.3346 P@7 0.3644 R@7 0.3094 R@100 0.654 MRR 0.7753
+195.5s 30 
+195.5s 31 B. Each trained setup: dense alone, and dense + lambda x TF-IDF (lambda on a finer grid; random-init and GDN show how much of a hybrid is TF-IDF alone)
+195.5s 32 p7_moe3__moe_uni_maxsim_16                         dense 0.3546 | hybrid by lambda 1:0.4002 2:0.4036 3:0.4069 4:0.4058 6:0.4058 8:0.4036 12:0.4002 16:0.3991 | best 3: 0.4069
+195.7s 33 p7_moe2__moe_uni_maxsim                            dense 0.3480 | hybrid by lambda 1:0.4136 2:0.4102 3:0.4147 4:0.4113 6:0.4069 8:0.4024 12:0.4024 16:0.4013 | best 3: 0.4147
+195.7s 34 p7_moe2__moe_uni_list_proj0                        dense 0.3446 | hybrid by lambda 1:0.3980 2:0.4013 3:0.4013 4:0.4047 6:0.4013 8:0.3991 12:0.3969 16:0.3969 | best 4: 0.4047
+195.7s 35 p7_moe3__moe_uni_maxsim_t                          dense 0.3446 | hybrid by lambda 1:0.4080 2:0.4136 3:0.4113 4:0.4091 6:0.4058 8:0.4024 12:0.4013 16:0.4002 | best 2: 0.4136
+195.9s 36 p7_gqa3__kd3_gqa_uni_list_proj0                    dense 0.3435 | hybrid by lambda 1:0.3924 2:0.4002 3:0.4036 4:0.4047 6:0.4024 8:0.4013 12:0.3991 16:0.3980 | best 4: 0.4047
+195.9s 37 p7_gqa3__kd3_gqa_uni_maxsim                        dense 0.3424 | hybrid by lambda 1:0.4091 2:0.4125 3:0.4102 4:0.4102 6:0.4102 8:0.4047 12:0.4013 16:0.3991 | best 2: 0.4125
+195.9s 38 p7_moe3__moe_uni_maxsim_list                       dense 0.3391 | hybrid by lambda 1:0.4036 2:0.4091 3:0.4102 4:0.4047 6:0.4047 8:0.4024 12:0.4002 16:0.4002 | best 3: 0.4102
+196.2s 39 p7_gqa2__gqa_uni_list_proj0                        dense 0.3346 | hybrid by lambda 1:0.3969 2:0.4002 3:0.4024 4:0.4013 6:0.4024 8:0.4013 12:0.3991 16:0.3980 | best 3: 0.4024
+196.2s 40 p7_gqa3__gqa_uni_maxsim                            dense 0.3335 | hybrid by lambda 1:0.4047 2:0.4102 3:0.4113 4:0.4080 6:0.4058 8:0.4024 12:0.4013 16:0.4002 | best 3: 0.4113
+196.2s 41 p7_moe2__moe_uni_list                              dense 0.3280 | hybrid by lambda 1:0.4002 2:0.4002 3:0.4002 4:0.4024 6:0.4013 8:0.4013 12:0.3991 16:0.3980 | best 4: 0.4024
+196.4s 42 p7_ablate_b__b_sel_uniform                         dense 0.3213 | hybrid by lambda 1:0.4024 2:0.4024 3:0.4024 4:0.4047 6:0.4024 8:0.4002 12:0.3991 16:0.3980 | best 4: 0.4047
+196.4s 43 p7_gqa2__gqa_uni_list                              dense 0.3191 | hybrid by lambda 1:0.4002 2:0.4024 3:0.4036 4:0.4013 6:0.4013 8:0.4013 12:0.4002 16:0.3991 | best 3: 0.4036
+196.4s 44 p7_moe__moe_lorma                                  dense 0.3135 | hybrid by lambda 1:0.3958 2:0.3991 3:0.4013 4:0.4002 6:0.4013 8:0.4013 12:0.3980 16:0.3991 | best 3: 0.4013
+196.6s 45 p7_ablate_b__b_sel_first                           dense 0.3102 | hybrid by lambda 1:0.4024 2:0.4013 3:0.4002 4:0.4024 6:0.3980 8:0.3980 12:0.3991 16:0.3980 | best 1: 0.4024
+196.6s 46 p7_ablate_b__b_proj0                               dense 0.3068 | hybrid by lambda 1:0.3813 2:0.3913 3:0.3969 4:0.3980 6:0.3980 8:0.4013 12:0.3991 16:0.3980 | best 8: 0.4013
+196.6s 47 p7_moe__moe_lorma_strip                            dense 0.3057 | hybrid by lambda 1:0.3958 2:0.3969 3:0.4013 4:0.4002 6:0.4002 8:0.4013 12:0.3991 16:0.3991 | best 3: 0.4013
+196.8s 48 p7_ablate_b__b_doc_maxsim                          dense 0.3013 | hybrid by lambda 1:0.4024 2:0.4002 3:0.4036 4:0.4036 6:0.3991 8:0.3980 12:0.4002 16:0.3991 | best 3: 0.4036
+196.8s 49 p7_gqa2__gqa_uni_list_8ch                          dense 0.2991 | hybrid by lambda 1:0.4047 2:0.4069 3:0.4036 4:0.4047 6:0.4002 8:0.4002 12:0.3991 16:0.3991 | best 2: 0.4069
+196.8s 50 p7_moe__moe_partial2                               dense 0.2979 | hybrid by lambda 1:0.3936 2:0.4024 3:0.4036 4:0.4013 6:0.4024 8:0.3991 12:0.3991 16:0.3980 | best 3: 0.4036
+197.1s 51 p7_ablate_a__a_obj_listwise                        dense 0.2968 | hybrid by lambda 1:0.3891 2:0.3958 3:0.3969 4:0.3980 6:0.4013 8:0.4002 12:0.3980 16:0.3969 | best 6: 0.4013
+197.1s 52 p7_ablate_a__a_neg_random                          dense 0.2957 | hybrid by lambda 1:0.3924 2:0.4002 3:0.4002 4:0.3969 6:0.3991 8:0.3991 12:0.3969 16:0.3991 | best 2: 0.4002
+197.1s 53 p7_ablate_b__b_train1chunk                         dense 0.2935 | hybrid by lambda 1:0.3880 2:0.3958 3:0.3980 4:0.4013 6:0.4024 8:0.4024 12:0.4002 16:0.4002 | best 6: 0.4024
+197.3s 54 p7_kd_gqa__kd_gqa_lorma_scores                     dense 0.2924 | hybrid by lambda 1:0.3902 2:0.3980 3:0.3991 4:0.3969 6:0.4002 8:0.4002 12:0.4013 16:0.3991 | best 12: 0.4013
+197.3s 55 p7_ablate_b__b_win256                              dense 0.2924 | hybrid by lambda 1:0.3947 2:0.3958 3:0.3980 4:0.3991 6:0.4013 8:0.4024 12:0.4013 16:0.3991 | best 8: 0.4024
+197.3s 56 p7_ablate_b__b_overlap                             dense 0.2924 | hybrid by lambda 1:0.3958 2:0.3958 3:0.3980 4:0.3991 6:0.3980 8:0.3980 12:0.3969 16:0.3969 | best 4: 0.3991
+197.5s 57 p7_kd_gqa__kd_gqa_lorma_both                       dense 0.2902 | hybrid by lambda 1:0.3902 2:0.3958 3:0.3991 4:0.3980 6:0.3980 8:0.3991 12:0.3991 16:0.3991 | best 3: 0.3991
+197.5s 58 p7_ablate_a__a_neg_hard3                           dense 0.2902 | hybrid by lambda 1:0.3891 2:0.3980 3:0.4024 4:0.4024 6:0.4047 8:0.4036 12:0.4013 16:0.4002 | best 6: 0.4047
+197.5s 59 p7_gqa__gqa_lorma                                  dense 0.2890 | hybrid by lambda 1:0.3913 2:0.3958 3:0.3991 4:0.3991 6:0.4013 8:0.3991 12:0.4013 16:0.4002 | best 6: 0.4013
+197.8s 60 p7_ablate_a__a_neg_mixed                           dense 0.2890 | hybrid by lambda 1:0.3891 2:0.3947 3:0.3958 4:0.3991 6:0.4002 8:0.3991 12:0.3991 16:0.3969 | best 6: 0.4002
+197.8s 61 p7_ablate_b__b_strip                               dense 0.2890 | hybrid by lambda 1:0.3980 2:0.3969 3:0.3980 4:0.3980 6:0.3991 8:0.3991 12:0.3991 16:0.3991 | best 6: 0.3991
+197.8s 62 p7_kd_gqa__kd_gqa_lorma_embed                      dense 0.2868 | hybrid by lambda 1:0.3869 2:0.3980 3:0.3969 4:0.3958 6:0.4002 8:0.3991 12:0.4002 16:0.4002 | best 6: 0.4002
+198.0s 63 p7_gqa__gqa_qlora                                  dense 0.2857 | hybrid by lambda 1:0.3891 2:0.3958 3:0.3969 4:0.3980 6:0.4013 8:0.4002 12:0.3991 16:0.3969 | best 6: 0.4013
+198.0s 64 p7_ablate_a__a_prompt                              dense 0.2857 | hybrid by lambda 1:0.3924 2:0.3991 3:0.3980 4:0.3980 6:0.4002 8:0.4002 12:0.4002 16:0.4002 | best 6: 0.4002
+198.0s 65 p7_ablate_b__b_ref                                 dense 0.2846 | hybrid by lambda 1:0.3958 2:0.3969 3:0.3969 4:0.3980 6:0.3980 8:0.4002 12:0.4002 16:0.3991 | best 8: 0.4002
+198.2s 66 p7_ablate_a__a_ref                                 dense 0.2835 | hybrid by lambda 1:0.3958 2:0.3958 3:0.3969 4:0.3980 6:0.3980 8:0.4002 12:0.4002 16:0.3991 | best 8: 0.4002
+198.2s 67 p7_ablate_a__a_neg_inbatch                         dense 0.2835 | hybrid by lambda 1:0.3891 2:0.3969 3:0.4002 4:0.4002 6:0.4002 8:0.4013 12:0.3991 16:0.3991 | best 8: 0.4013
+198.2s 68 p7_ablate_b__b_doc_attn                            dense 0.2835 | hybrid by lambda 1:0.3991 2:0.4013 3:0.4013 4:0.4024 6:0.4002 8:0.3991 12:0.3991 16:0.3980 | best 4: 0.4024
+198.4s 69 p7_gqa__gqa_partial4                               dense 0.2824 | hybrid by lambda 1:0.3913 2:0.3958 3:0.3947 4:0.3958 6:0.4002 8:0.4013 12:0.4002 16:0.3991 | best 8: 0.4013
+198.4s 70 p7_gqa__gqa_ia3                                    dense 0.2824 | hybrid by lambda 1:0.3936 2:0.3958 3:0.3980 4:0.4013 6:0.4002 8:0.4013 12:0.4002 16:0.3980 | best 4: 0.4013
+198.4s 71 p7_gqa__gqa_full_ft                                dense 0.2802 | hybrid by lambda 1:0.3924 2:0.3969 3:0.3991 4:0.3991 6:0.4002 8:0.4002 12:0.4013 16:0.4002 | best 12: 0.4013
+198.7s 72 p7_ablate_a__a_prefix                              dense 0.2802 | hybrid by lambda 1:0.3924 2:0.4002 3:0.3980 4:0.3980 6:0.4002 8:0.4013 12:0.4002 16:0.4002 | best 8: 0.4013
+198.7s 73 p7_ablate_b__b_doc_max                             dense 0.2802 | hybrid by lambda 1:0.4002 2:0.3991 3:0.4002 4:0.3980 6:0.3969 8:0.3969 12:0.3991 16:0.3991 | best 1: 0.4002
+198.7s 74 p7_ablate_b__b_pool_meanlast                       dense 0.2601 | hybrid by lambda 1:0.3847 2:0.3958 3:0.3947 4:0.3958 6:0.3958 8:0.3958 12:0.3958 16:0.3947 | best 2: 0.3958
+198.9s 75 p7_mor3__mor_uni_list_proj0                        dense 0.2590 | hybrid by lambda 1:0.3891 2:0.3913 3:0.3947 4:0.3980 6:0.3969 8:0.3969 12:0.3958 16:0.3958 | best 4: 0.3980
+198.9s 76 p7_ablate_a__a_obj_own                             dense 0.2379 | hybrid by lambda 1:0.3869 2:0.3924 3:0.3991 4:0.3991 6:0.3980 8:0.4002 12:0.3991 16:0.4002 | best 8: 0.4002
+198.9s 77 p7_ablate_a__a_obj_pairwise                        dense 0.2379 | hybrid by lambda 1:0.3869 2:0.3924 3:0.3991 4:0.3991 6:0.3991 8:0.4002 12:0.3991 16:0.4002 | best 8: 0.4002
+199.1s 78 p7_ablate_b__b_pool_last                           dense 0.2379 | hybrid by lambda 1:0.3869 2:0.3969 3:0.3958 4:0.3936 6:0.3947 8:0.3924 12:0.3958 16:0.3958 | best 2: 0.3969
+199.1s 79 p7_lstm__lstm_full_ft                              dense 0.2290 | hybrid by lambda 1:0.3824 2:0.3913 3:0.3902 4:0.3924 6:0.3980 8:0.3969 12:0.3969 16:0.3991 | best 16: 0.3991
+199.1s 80 p7_kd_lstm__kd_lstm_full_ft                        dense 0.2290 | hybrid by lambda 1:0.3824 2:0.3924 3:0.3947 4:0.3947 6:0.3991 8:0.3980 12:0.3991 16:0.3991 | best 6: 0.3991
+199.3s 81 p7_ablate_a__a_obj_margin                          dense 0.2290 | hybrid by lambda 1:0.3936 2:0.3980 3:0.3991 4:0.3991 6:0.3991 8:0.3991 12:0.4002 16:0.3991 | best 12: 0.4002
+199.3s 82 p7_lstm__lstm_partial1                             dense 0.2268 | hybrid by lambda 1:0.3813 2:0.3902 3:0.3913 4:0.3924 6:0.3980 8:0.3980 12:0.3969 16:0.3980 | best 6: 0.3980
+199.3s 83 p7_ablate_b__b_sim_dot                             dense 0.2257 | hybrid by lambda 1:0.3980 2:0.4047 3:0.4058 4:0.4091 6:0.4024 8:0.4013 12:0.4002 16:0.3980 | best 4: 0.4091
+199.6s 84 p7_mor3__kd3_mor_ft_uni_list_proj0                 dense 0.2246 | hybrid by lambda 1:0.3891 2:0.3969 3:0.3936 4:0.3947 6:0.3958 8:0.3936 12:0.3924 16:0.3936 | best 2: 0.3969
+199.6s 85 p7_ablate_b__b_doc_first                           dense 0.2246 | hybrid by lambda 1:0.3980 2:0.4024 3:0.4013 4:0.4036 6:0.4013 8:0.4024 12:0.4036 16:0.4013 | best 4: 0.4036
+199.6s 86 p7_lstm3__kd3_lstm_uni_list_proj0                  dense 0.2223 | hybrid by lambda 1:0.3847 2:0.3924 3:0.3947 4:0.3947 6:0.3958 8:0.3958 12:0.3947 16:0.3947 | best 6: 0.3958
+199.8s 87 p7_mor__kd_mor_full_ft                             dense 0.2212 | hybrid by lambda 1:0.3791 2:0.3902 3:0.3969 4:0.3936 6:0.3913 8:0.3958 12:0.3947 16:0.3958 | best 3: 0.3969
+199.8s 88 p7_lstm3__lstm_uni_list_proj0                      dense 0.2201 | hybrid by lambda 1:0.3835 2:0.3902 3:0.3924 4:0.3947 6:0.3947 8:0.3958 12:0.3947 16:0.3947 | best 8: 0.3958
+199.8s 89 p7_mor__mor_lorma                                  dense 0.2190 | hybrid by lambda 1:0.3835 2:0.3924 3:0.3958 4:0.3936 6:0.3958 8:0.3969 12:0.3969 16:0.3969 | best 8: 0.3969
+200.0s 90 p7_mor3__mor_ft_uni_list_proj0                     dense 0.2168 | hybrid by lambda 1:0.3947 2:0.3947 3:0.3947 4:0.3936 6:0.3958 8:0.3947 12:0.3936 16:0.3936 | best 6: 0.3958
+200.0s 91 p7_mor__mor_full_ft                                dense 0.2001 | hybrid by lambda 1:0.3858 2:0.3947 3:0.3936 4:0.3958 6:0.3991 8:0.3980 12:0.3969 16:0.3969 | best 6: 0.3991
+200.0s 92 p7_gdn__gdn_partial4                               dense 0.0567 | hybrid by lambda 1:0.3724 2:0.3869 3:0.3880 4:0.3880 6:0.3902 8:0.3902 12:0.3936 16:0.3936 | best 12: 0.3936
+200.3s 93 p7_ablate_a__a_random_init                         dense 0.0456 | hybrid by lambda 1:0.3835 2:0.4002 3:0.4013 4:0.4024 6:0.4013 8:0.4002 12:0.3980 16:0.3980 | best 4: 0.4024
+200.3s 94 p7_gdn__gdn_lorma                                  dense 0.0400 | hybrid by lambda 1:0.3802 2:0.3880 3:0.3880 4:0.3913 6:0.3924 8:0.3936 12:0.3947 16:0.3958 | best 16: 0.3958
+200.3s 95 
+200.3s 96 C. Reciprocal-rank fusion (k = 60) of TF-IDF and each of the 5 best dense setups
+200.3s 97 RRF(TF-IDF, p7_moe3__moe_uni_maxsim_16)                    F1@7 0.3813 P@7 0.4153 R@7 0.3525 R@100 0.743 MRR 0.8279
+200.3s 98 RRF(TF-IDF, p7_moe2__moe_uni_maxsim)                       F1@7 0.3924 P@7 0.4274 R@7 0.3628 R@100 0.768 MRR 0.8497
+200.5s 99 RRF(TF-IDF, p7_moe2__moe_uni_list_proj0)                   F1@7 0.3780 P@7 0.4116 R@7 0.3494 R@100 0.748 MRR 0.8175
+200.5s 100 RRF(TF-IDF, p7_moe3__moe_uni_maxsim_t)                     F1@7 0.3880 P@7 0.4225 R@7 0.3587 R@100 0.755 MRR 0.8681
+200.5s 101 RRF(TF-IDF, p7_gqa3__kd3_gqa_uni_list_proj0)               F1@7 0.3769 P@7 0.4104 R@7 0.3484 R@100 0.751 MRR 0.8204
+200.5s 102 
+200.5s 103 D. Ensembles of the Phase-1 dense models only (mean of z-scored similarities; no lexical score)
+200.5s 104 dense ensemble, top 2                                      F1@7 0.3558 P@7 0.3874 R@7 0.3289 R@100 0.743 MRR 0.7708
+200.5s 105 dense ensemble, top 3                                      F1@7 0.3691 P@7 0.4019 R@7 0.3412 R@100 0.745 MRR 0.7797
+200.5s 106 dense ensemble, top 5                                      F1@7 0.3646 P@7 0.3971 R@7 0.3371 R@100 0.747 MRR 0.7942
+200.5s 107 dense ensemble, top 8                                      F1@7 0.3624 P@7 0.3947 R@7 0.3350 R@100 0.747 MRR 0.7853
+203.1s 108 dense ensemble, greedy ['p7_moe3__moe_uni_maxsim_16', 'p7_gqa3__kd3_gqa_uni_maxsim', 'p7_moe2__moe_uni_list_proj0'] F1@7 0.3758 P@7 0.4092 R@7 0.3474 R@100 0.747 MRR 0.7970
+203.1s 109 
+203.1s 110 E. Dense ensembles + TF-IDF (weight on TF-IDF chosen on dev)
+203.1s 111 top 3 dense + 2 x TF-IDF                                   F1@7 0.4091 P@7 0.4455 R@7 0.3782 R@100 0.745 MRR 0.8805 | vs TF-IDF [+0.0045, +0.0215] p=0.003
+203.4s 112 top 5 dense + 3 x TF-IDF                                   F1@7 0.4102 P@7 0.4467 R@7 0.3792 R@100 0.739 MRR 0.8792 | vs TF-IDF [+0.0067, +0.0208] p=0.000
+203.4s 113 greedy dense dense + 3 x TF-IDF                            F1@7 0.4102 P@7 0.4467 R@7 0.3792 R@100 0.737 MRR 0.8793 | vs TF-IDF [+0.0068, +0.0208] p=0.000
+203.4s 114 
+203.4s 115 F. Significance of the best single-model hybrids vs TF-IDF alone (paired bootstrap over the 118 dev queries)
+203.7s 116 p7_moe2__moe_uni_maxsim + 3 x TF-IDF                       F1@7 0.4147 P@7 0.4516 R@7 0.3834 R@100 0.740 MRR 0.8729 | vs TF-IDF [+0.0096, +0.0271] p=0.000
+203.7s 117 p7_moe3__moe_uni_maxsim_t + 2 x TF-IDF                     F1@7 0.4136 P@7 0.4504 R@7 0.3823 R@100 0.744 MRR 0.8813 | vs TF-IDF [+0.0079, +0.0263] p=0.000
+203.7s 118 p7_gqa3__kd3_gqa_uni_maxsim + 2 x TF-IDF                   F1@7 0.4125 P@7 0.4492 R@7 0.3813 R@100 0.735 MRR 0.8776 | vs TF-IDF [+0.0061, +0.0253] p=0.001
+203.9s 119 p7_gqa3__gqa_uni_maxsim + 3 x TF-IDF                       F1@7 0.4113 P@7 0.4479 R@7 0.3803 R@100 0.727 MRR 0.8750 | vs TF-IDF [+0.0066, +0.0227] p=0.001
+203.9s 120 p7_moe3__moe_uni_maxsim_list + 3 x TF-IDF                  F1@7 0.4102 P@7 0.4467 R@7 0.3792 R@100 0.734 MRR 0.8708 | vs TF-IDF [+0.0036, +0.0236] p=0.005
+203.9s 121 
+203.9s 122 G. Learned combination: a classifier learns how to weigh the scores (z-scored per query) of TF-IDF, BM25, the best dense setups and the header-citation link.
+204.9s 123 dense features: ['p7_moe3__moe_uni_maxsim_16', 'p7_moe2__moe_uni_maxsim', 'p7_moe2__moe_uni_list_proj0', 'p7_moe3__moe_uni_maxsim_t', 'p7_gqa3__kd3_gqa_uni_list_proj0', 'p7_gqa3__kd3_gqa_uni_maxsim', 'p7_lstm__lstm_full_ft', 'p7_mor3__mor_uni_list_proj0']
+219.7s 124 honest dev F1@7 (fit on half of the dev queries, scored on the other half; 5 x 2 splits; mean +- sd):
+219.7s 125 logistic regression        0.4471 +- 0.0205
+219.7s 126 gradient-boosted trees     0.4127 +- 0.0253
+219.7s 127 grid hybrid                0.4112 +- 0.0230
+219.7s 128 TF-IDF                     0.3975 +- 0.0206
+220.7s 129 logistic-regression weights (all dev queries): {'TF-IDF': 1.172, 'BM25': -0.861, 'TF-IDF 1/log rank': 3.76, 'p7_moe3__moe_uni_maxsim_16': 0.095, 'p7_moe2__moe_uni_maxsim': 0.526, 'p7_moe2__moe_uni_list_proj0': 0.456, 'p7_moe3__moe_uni_maxsim_t': -0.236, 'p7_gqa3__kd3_gqa_uni_list_proj0': -0.075, 'p7_gqa3__kd3_gqa_uni_maxsim': 0.52, 'p7_lstm__lstm_full_ft': -0.158, 'p7_mor3__mor_uni_list_proj0': 0.088, 'best dense 1/log rank': 1.596, 'header citation link': 5.376}
+220.7s 130 learned combination (logistic regression), fitted on all dev (optimistic) F1@7 0.4514 P@7 0.4915 R@7 0.4173 R@100 0.800 MRR 0.9028 | vs TF-IDF [+0.0354, +0.0755] p=0.000
+222.6s 131 without the header-citation feature: honest 0.4307 +- 0.0201
+231.6s 132 gradient-boosted trees without the header-citation feature: honest 0.3954 +- 0.0281
+234.0s 133 uploaded submission_p7_dense_ensemble.zip to bucket kavincg23/cs781-models
+234.6s 134 uploaded submission_p7_fusion.zip to bucket kavincg23/cs781-models
+235.2s 135 uploaded submission_p7_learned.zip to bucket kavincg23/cs781-models
+235.8s 136 uploaded submission_p7_learned_noheader.zip to bucket kavincg23/cs781-models
+236.3s 137 uploaded submission_p7_dense_top3.zip to bucket kavincg23/cs781-models
+236.9s 138 uploaded submission_p7_dense_top5.zip to bucket kavincg23/cs781-models
+237.5s 139 uploaded submission_p7_fusion_top3.zip to bucket kavincg23/cs781-models
+238.1s 140 uploaded submission_p7_fusion_top5.zip to bucket kavincg23/cs781-models
+238.6s 141 uploaded submission_p7_fusion_greedy.zip to bucket kavincg23/cs781-models
+239.2s 142 uploaded submission_p7_rrf_best.zip to bucket kavincg23/cs781-models
+239.8s 143 uploaded submission_p7_learned_noheader_gbt.zip to bucket kavincg23/cs781-models
+239.8s 144 
+239.8s 145 submission files (learned: honest cross-validated dev F1@7; others: dev F1@7 of the chosen combination):
+239.8s 146 submission_p7_dense_ensemble.zip         = dense ensemble, greedy ['p7_moe3__moe_uni_maxsim_16', 'p7_gqa3__kd3_gqa_uni_maxsim', 'p7_moe2__moe_uni_list_proj0'] (dev F1@7 0.3758)
+239.8s 147 submission_p7_fusion.zip                 = p7_moe2__moe_uni_maxsim + 3 x TF-IDF (dev F1@7 0.4147)
+239.8s 148 submission_p7_learned.zip                = learned combination (logistic regression) (dev F1@7 0.4471)
+239.8s 149 submission_p7_learned_noheader.zip       = learned combination (logistic regression, no header-citation feature) (dev F1@7 0.4307)
+239.8s 150 submission_p7_dense_top3.zip             = dense ensemble, top 3 (dev F1@7 0.3691)
+239.8s 151 submission_p7_dense_top5.zip             = dense ensemble, top 5 (dev F1@7 0.3646)
+239.8s 152 submission_p7_fusion_top3.zip            = top 3 dense + 2 x TF-IDF (dev F1@7 0.4091)
+239.8s 153 submission_p7_fusion_top5.zip            = top 5 dense + 3 x TF-IDF (dev F1@7 0.4102)
+239.8s 154 submission_p7_fusion_greedy.zip          = greedy dense dense + 3 x TF-IDF (dev F1@7 0.4102)
+239.8s 155 submission_p7_rrf_best.zip               = RRF(TF-IDF, p7_moe2__moe_uni_maxsim) (dev F1@7 0.3924)
+239.8s 156 submission_p7_learned_noheader_gbt.zip   = learned combination (gradient-boosted trees, no header-citation feature) (dev F1@7 0.3954)
+240.3s 157 uploaded p7_fusion.json to bucket kavincg23/cs781-models
+240.3s 158 done in 3 min
+246.2s 159 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+246.2s 160 cells[i][c] = re.sub('\\\\\|', '|', cell)
+246.4s 161 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+246.4s 162 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+247.2s 163 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+247.5s 164 [NbConvertApp] Writing 2038507 bytes to __notebook__.ipynb
+250.2s 165 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+251.4s 166 [NbConvertApp] Writing 2175263 bytes to __results__.html
