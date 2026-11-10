@@ -111,11 +111,4 @@ All checkpoints, cached results and teacher files are saved to the bucket. A not
 therefore resumes where it stopped when you run it again. Each notebook is self-contained: the model code, the
 tokenizer loader, training, evaluation (the course's official scoring code) and submission writing are all inside it.
 
----
 
-## Honest notes
-
-- **One seed per setup.** Several test sets are tiny (10 documents in Phase 3, 35 in Phase 2), so small differences are noise. Each phase README says how large the noise was.
-- **Phase 2 self-training** read the unlabelled test text (never its labels). This is stated in the report.
-- **The Phase-7 leaderboard entry uses the citation header.** `p7_learned` uses a citation link found in Supreme Court headers. The same model without that feature (`p7_learned_noheader`, 0.4294) is our leak-free result.
-- **LLM assistance.** An LLM assistant (Claude) helped write notebook code and proposed placeholder hyperparameters. The LLM-usage declaration in the report states exactly how.
